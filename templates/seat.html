@@ -1,0 +1,337 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/bookticket.css'%}" />
+    <title>Chọn Ghế | Starlight</title>
+  </head>
+  <body>
+    <header class="header-area">
+      <div class="header-top">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <div class="header-top_left">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+          <div class="header-top_right">
+            <a href="">FAQ's</a>
+            <div class="dropdown">
+                <span class="account">User name</span>
+                <div class="droplist-info" >
+                    <a href="#"> <i class="fa-regular fa-user"></i> Thông tin</a>
+                    <a href="#"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất </a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="header-navigation navbar navbar-expand-lg ">
+          <div class="container" >
+            <div class="navbar-brand" >
+                <img src="" alt="LOGO" />
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" >
+
+                <ul class="navbar-list navbar-nav mb-2 mb-lg-0" >
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">LỊCH CHIẾU</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">PHIM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">KHUYẾN MÃI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">ĐIỆN ẢNH</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">LIÊN HỆ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">TUYỂN DỤNG</a></li>
+                </ul>
+            </div>
+
+        </div>
+      </nav>
+      <section class="header-bottom">
+        <h2>Bước 1: Chọn Ghế</h2>
+        <div class="screen-thumb">   
+            <h4  class="screen">MÀN HÌNH</h4>
+            <img src="http://pixner.net/boleto/demo/assets/images/movie/screen-thumb.png" alt="movie">
+            </div> 
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffeb3b;
+        }
+        .screen {
+            background-color: #666;
+            width: 80%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin: 10px 0;
+            color: #fff;
+        }
+        .seat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
+        }
+        .seat {
+            width: 40px;
+            height: 40px;
+            margin: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .seat.regular {
+            background-color: #ffeb3b;
+        }
+        .seat.couple {
+            background-color: #e91e63;
+        }
+        .seat.vip {
+            background-color: #03a9f4;
+        }
+        .seat.selected {
+            background-color: #00c853;
+        }
+        .seat.sold {
+            background-color: #9e9e9e;
+            pointer-events: none;
+        }
+        .seat-info {
+            margin: 10px 0;
+        }
+        .seat-info p {
+            margin: 5px 0;
+        }
+        .ticket-info {
+            margin-top: 20px;
+        }
+        #next-btn {
+            padding: 10px 20px;
+            background-color: #ffeb3b;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #next-btn:hover {
+            background-color: #ffdd00;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+        .legend-regular {
+            background-color: #ffeb3b;
+        }
+        .legend-couple {
+            background-color: #e91e63;
+        }
+        .legend-vip {
+            background-color: #03a9f4;
+        }
+        .legend-selected {
+            background-color: #00c853;
+        }
+        .screen-thumb {
+            width: 100%;
+            max-width: 692px;
+            margin: 0 auto 30px;
+            padding-top: 20px;
+        }
+        .screen {
+            font-size: 28px;
+            margin: 0px auto 15px;
+            position: relative;
+            text-align: center;
+            max-width: 350px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px;
+            color: #fff;
+            background-color: #2b2b2b;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="seat-container">
+        <!-- Row A -->
+        <div class="row">
+            <div class="seat regular" data-seat="A01">A01</div>
+            <div class="seat regular" data-seat="A02">A02</div>
+            <div class="seat couple" data-seat="A03">A03</div>
+            <div class="seat couple" data-seat="A04">A04</div>
+            <div class="seat vip" data-seat="A05">A05</div>
+            <div class="seat vip" data-seat="A06">A06</div>
+            <div class="seat couple" data-seat="A07">A07</div>
+            <div class="seat couple" data-seat="A08">A08</div>
+            <div class="seat couple" data-seat="A09">A09</div>
+            <div class="seat couple" data-seat="A10">A10</div>
+        </div>
+        <!-- Row B -->
+        <div class="row">
+            <div class="seat regular" data-seat="B01">B01</div>
+            <div class="seat regular" data-seat="B02">B02</div>
+            <div class="seat couple" data-seat="B03">B03</div>
+            <div class="seat couple" data-seat="B04">B04</div>
+            <div class="seat vip" data-seat="B05">B05</div>
+            <div class="seat vip" data-seat="B06">B06</div>
+            <div class="seat couple" data-seat="B07">B07</div>
+            <div class="seat couple" data-seat="B08">B08</div>
+            <div class="seat couple" data-seat="B09">B09</div>
+            <div class="seat couple" data-seat="B10">B10</div>
+        </div>
+        <!-- Row C -->
+        <div class="row">
+            <div class="seat regular" data-seat="C01">C01</div>
+            <div class="seat regular" data-seat="C02">C02</div>
+            <div class="seat couple" data-seat="C03">C03</div>
+            <div class="seat couple" data-seat="C04">C04</div>
+            <div class="seat vip" data-seat="C05">C05</div>
+            <div class="seat vip" data-seat="C06">C06</div>
+            <div class="seat couple" data-seat="C07">C07</div>
+            <div class="seat couple" data-seat="C08">C08</div>
+            <div class="seat couple" data-seat="C09">C09</div>
+            <div class="seat couple" data-seat="C10">C10</div>
+        </div>
+        <!-- Row D -->
+        <div class="row">
+            <div class="seat regular" data-seat="D01">D01</div>
+            <div class="seat regular" data-seat="D02">D02</div>
+            <div class="seat couple" data-seat="D03">D03</div>
+            <div class="seat couple" data-seat="D04">D04</div>
+            <div class="seat vip" data-seat="D05">D05</div>
+            <div class="seat vip" data-seat="D06">D06</div>
+            <div class="seat couple" data-seat="D07">D07</div>
+            <div class="seat couple" data-seat="D08">D08</div>
+            <div class="seat couple" data-seat="D09">D09</div>
+            <div class="seat couple" data-seat="D10">D10</div>
+        </div>
+        <!-- Row E -->
+        <div class="row">
+            <div class="seat regular" data-seat="E01">E01</div>
+            <div class="seat regular" data-seat="E02">E02</div>
+            <div class="seat couple" data-seat="E03">E03</div>
+            <div class="seat couple" data-seat="E04">E04</div>
+            <div class="seat vip" data-seat="E05">E05</div>
+            <div class="seat vip" data-seat="E06">E06</div>
+            <div class="seat couple" data-seat="E07">E07</div>
+            <div class="seat couple" data-seat="E08">E08</div>
+            <div class="seat couple" data-seat="E09">E09</div>
+            <div class="seat couple" data-seat="E10">E10</div>
+        </div>
+    </div>
+    
+    <!-- Seat Legend -->
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color legend-regular"></div> Ghế thường
+        </div>
+        <div class="legend-item">
+            <div class="legend-color legend-couple"></div> Ghế đôi
+        </div>
+        <div class="legend-item">
+            <div class="legend-color legend-vip"></div> Ghế VIP
+        </div>
+        <div class="legend-item">
+            <div class="legend-color legend-selected"></div> Ghế đã chọn
+        </div>
+    </div>
+
+    <div class="seat-info">
+        <p>Ghế đã chọn: <span id="selected-seats">None</span></p>
+        <p>Tổng tiền: <span id="total-price">0</span> VND</p>
+    </div>
+    <button id="next-btn">NEXT</button>
+    </section>
+    <script>
+        const seats = document.querySelectorAll('.seat');
+        const selectedSeatsElement = document.getElementById('selected-seats');
+        const totalPriceElement = document.getElementById('total-price');
+        let selectedSeats = [];
+        let ticketPrice = {
+            'regular': 100000, // 100,000 VND for regular seats
+            'couple': 150000,  // 150,000 VND for couple seats
+            'vip': 200000      // 200,000 VND for VIP seats
+        };
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                seat.classList.toggle('selected');
+                const seatNumber = seat.textContent;
+                const seatType = seat.classList.contains('regular') ? 'regular' :
+                                 seat.classList.contains('couple') ? 'couple' : 'vip';
+
+                if (selectedSeats.includes(seatNumber)) {
+                    selectedSeats = selectedSeats.filter(s => s !== seatNumber);
+                } else {
+                    selectedSeats.push(seatNumber);
+                }
+
+                // Update selected seats and total price
+                selectedSeatsElement.textContent = selectedSeats.join(', ') || 'None';
+                let totalPrice = selectedSeats.reduce((total, seat) => {
+                    const seatElement = document.querySelector(`div[data-seat="${seat}"]`);
+                    const seatType = seatElement.classList.contains('regular') ? 'regular' :
+                                     seatElement.classList.contains('couple') ? 'couple' : 'vip';
+                    return total + ticketPrice[seatType];
+                }, 0);
+                totalPriceElement.textContent = totalPrice;
+            });
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (selectedSeats.length > 0) {
+                alert(`Bạn đã chọn các ghế: ${selectedSeats.join(', ')}. Tổng tiền: ${totalPriceElement.textContent} VND`);
+            } else {
+                alert('Vui lòng chọn ghế trước khi tiếp tục.');
+            }
+        });
+    </script>
+</body>
+</html>
